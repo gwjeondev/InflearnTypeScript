@@ -9,6 +9,7 @@ const address = document.querySelector('#address');
 // user data
 const user = {};
 
+//미리 타입을 선언해줌
 /**
  * @typedef {object} Address 
  * @property {string} street
