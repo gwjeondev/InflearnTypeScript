@@ -30,10 +30,13 @@ const sum: SumFunction = (a: number, b: number): number => {
 };
 
 
-// 인덱싱
+// 인덱싱. 배열에 data도 사전에 정의 가능
 interface StringArray {
   [index: number]: string;
 }
 const arr: StringArray = ['a', 'b', 'c'];
 //error 발생. arr 배열에는 string 타입만 가능.
 //arr[0] = 10;
+
+
+
