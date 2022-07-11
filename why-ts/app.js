@@ -9,14 +9,15 @@ const address = document.querySelector('#address');
 // user data
 const user = {};
 
-//미리 타입을 선언해줌
 /**
+ * Address 객체 타입 선언
  * @typedef {object} Address 
  * @property {string} street
  * @property {string} city
  */
 
 /**
+ * User  객체 타입 선언
  * @typedef {object} User
  * @property {string} name
  * @property {string} email
@@ -24,6 +25,7 @@ const user = {};
  */
 
 /**
+ * fetchUser()의 return 타입 선언
  * @returns {Promise<User>}
  */
 const fetchUser = () => {
