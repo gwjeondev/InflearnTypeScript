@@ -19,9 +19,9 @@ let todoItems: Array<TodoItem>;
 
 const fetchTodoItems = (): Array<TodoItem> => {
   const todos: Array<TodoItem> = [];
-  todos.push(new TodoItemImpl(1, "안녕", false));
-  todos.push(new TodoItemImpl(2, "타입", false));
-  todos.push(new TodoItemImpl(3, "스크립트", false));
+  todos.push(new TodoItemImpl(1, '안녕', false));
+  todos.push(new TodoItemImpl(2, '타입', false));
+  todos.push(new TodoItemImpl(3, '스크립트', false));
 
   return todos;
 };
@@ -68,6 +68,6 @@ const log = (): void => {
 };
 
 todoItems = fetchTodoItems();
-addTwoTodoItems("hello");
-addTwoTodoItems("world");
+addTwoTodoItems('hello');
+addTwoTodoItems('world');
 log();
