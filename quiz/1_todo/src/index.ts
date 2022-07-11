@@ -1,22 +1,26 @@
-class TodoItem {
+// type Todo = {
+//   id: number;
+//   title: string;
+//   done: boolean;
+// }
+
+interface TodoItem {
   id: number;
   title: string;
   done: boolean;
+}
 
-  constructor(id: number, title: string, done: boolean) {
-    this.id = id;
-    this.title = title;
-    this.done = done;
-  }
+class TodoItemImpl implements TodoItem {
+  constructor(public id: number, public title: string, public done: boolean) {}
 }
 
 let todoItems: Array<TodoItem>;
 
 const fetchTodoItems = (): Array<TodoItem> => {
   const todos: Array<TodoItem> = [];
-  todos.push(new TodoItem(1, '안녕', false));
-  todos.push(new TodoItem(2, '타입', false));
-  todos.push(new TodoItem(3, '스크립트', false));
+  todos.push(new TodoItemImpl(1, '안녕', false));
+  todos.push(new TodoItemImpl(2, '타입', false));
+  todos.push(new TodoItemImpl(3, '스크립트', false));
 
   return todos;
 };
@@ -50,8 +54,11 @@ const showCompleted = (): Array<TodoItem> => {
 };
 
 // TODO: 아래 함수의 내용을 채워보세요. 아래 함수는 `addTodo()` 함수를 이용하여 2개의 새 할 일을 추가하는 함수입니다.
-const addTwoTodoItems = (): void => {
+const addTwoTodoItems = (todo: string): void => {
   // addTodo() 함수를 두 번 호출하여 todoItems에 새 할 일이 2개 추가되어야 합니다.
+  const todosLength: number = todoItems.length;
+  const todoItem = new TodoItem(todosLength, todo, false);
+  todoItems.push(todoItem);
 };
 
 // NOTE: 유틸 함수
@@ -60,5 +67,5 @@ const log = (): void => {
 };
 
 todoItems = fetchTodoItems();
-addTwoTodoItems();
+addTwoTodoItems('hello');
 log();
