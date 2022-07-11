@@ -32,7 +32,7 @@ const fetchTodos = (): Array<TodoItem> => {
   return todos;
 };
 
-const addTodo = (todo: TodoItem): void => {
+const addTodo = (todo: TodoItem) => {
   todoItems.push(todo);
 };
 
@@ -69,4 +69,5 @@ const log = (): void => {
 
 todoItems = fetchTodoItems();
 addTwoTodoItems("hello");
+addTwoTodoItems("world");
 log();
