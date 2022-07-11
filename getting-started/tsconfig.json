@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "allowJs": true, //ts파일에서 js파일을 import 하는것을 허용
+    "checkJs": true, //allowJs와 함께 사용되며, 일반 js파일에서도 type을 체크. ex)@ts-check
+    "noImplicitAny": true //모든 타입에 대하여 정의 ex)any라는 타입이 의도치 않게 발생할 경우 에러 발생
+  }
+}
