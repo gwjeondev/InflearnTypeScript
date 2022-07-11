@@ -30,7 +30,7 @@ const sum: SumFunction = (a: number, b: number): number => {
 };
 
 
-// 인덱싱. 배열에 data도 사전에 정의 가능
+// 인덱싱. 배열에 data도 인터페이스로 사전에 정의 가능
 interface StringArray {
   [index: number]: string;
 }
