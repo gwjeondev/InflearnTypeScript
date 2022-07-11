@@ -1,3 +1,4 @@
+//아래와 같이 type으로 정의하는것도 하나의 방법
 // type Todo = {
 //   id: number;
 //   title: string;
@@ -18,9 +19,9 @@ let todoItems: Array<TodoItem>;
 
 const fetchTodoItems = (): Array<TodoItem> => {
   const todos: Array<TodoItem> = [];
-  todos.push(new TodoItemImpl(1, '안녕', false));
-  todos.push(new TodoItemImpl(2, '타입', false));
-  todos.push(new TodoItemImpl(3, '스크립트', false));
+  todos.push(new TodoItemImpl(1, "안녕", false));
+  todos.push(new TodoItemImpl(2, "타입", false));
+  todos.push(new TodoItemImpl(3, "스크립트", false));
 
   return todos;
 };
@@ -57,7 +58,7 @@ const showCompleted = (): Array<TodoItem> => {
 const addTwoTodoItems = (todo: string): void => {
   // addTodo() 함수를 두 번 호출하여 todoItems에 새 할 일이 2개 추가되어야 합니다.
   const todosLength: number = todoItems.length;
-  const todoItem = new TodoItem(todosLength, todo, false);
+  const todoItem = new TodoItemImpl(todosLength, todo, false);
   todoItems.push(todoItem);
 };
 
@@ -67,5 +68,5 @@ const log = (): void => {
 };
 
 todoItems = fetchTodoItems();
-addTwoTodoItems('hello');
+addTwoTodoItems("hello");
 log();
