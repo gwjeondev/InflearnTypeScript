@@ -2,8 +2,10 @@
 enum NumberEnumShoes {
   Nike,
   Adidas,
-  NewBalance
+  NewBalance = 10,
+  Fila
 }
-console.log(NumberEnumShoes.Nike);
-console.log(NumberEnumShoes.Adidas);
-console.log(NumberEnumShoes.NewBalance);
+console.log(NumberEnumShoes.Nike); //0
+console.log(NumberEnumShoes.Adidas); //1
+console.log(NumberEnumShoes.NewBalance); //10
+console.log(NumberEnumShoes.Fila); //1
