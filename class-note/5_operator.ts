@@ -23,3 +23,30 @@ logMessageUnionFunc(1004);
 
 //union 타입의 변수 정의
 const numOrStr: number | string = 10; //number 또는 string
+
+interface Programmer {
+  name: string;
+  skill: string;
+}
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+//Union 타입의 함수 호출(|)
+const askSomeoneUnion = (someone: Programmer | Person) => {
+  //someone.name 사용 가능
+  //someone.skill, someone.age 사용 불가능 --> 타입가드 처리 필요
+};
+askSomeoneUnion({ name: 'jeon', skill: 'web' });
+askSomeoneUnion({ name: 'jeon', age: 29 });
+
+//InterSection 타입의 함수 호출(&)
+const askSomeoneInterSection = (someone: Programmer & Person) => {
+  //someone.name 사용 가능
+  //someone.skill, someone.age 사용 가능
+};
+//InterSection 타입은, 합집합과 같다. 두개의 타입을 포함하는 새로운 타입을 사용한다고 생각하자.
+//따라서 호출시에는 사람의 속성과 프로그래머의 속성을 모두 가져야 하며 두 interface에서 정해놓은 모든 속성들이 있어야 한다.
+askSomeoneInterSection({ name: 'jeon', skill: 'web', age: 29 });
