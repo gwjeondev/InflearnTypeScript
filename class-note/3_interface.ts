@@ -39,4 +39,32 @@ const arr: StringArray = ['a', 'b', 'c'];
 //arr[0] = 10;
 
 
+//딕셔너리 패턴
+interface StringRegexDictionary {
+  //속성의 key는 string, 값은 정규 표현식
+  [key: string]: RegExp;
+}
+const dic: StringRegexDictionary = {
+  cssFile: /\.css$/,
+  //error 발생. 값이 정규표현식이 아님.
+  //randomFile: 'anfdaudfandfj'
+}
+//딕셔너리의 key들만 뽑아서 배열로 만든다고 가정했을때, 그 값이 string 이라는걸 추론할 수 있다.
+Object.keys(dic).forEach(value => {
+})
 
+
+//인터페이스의 확장
+interface Person {
+  name: string,
+  age: number
+}
+interface Developer extends Person {
+  language: string
+}
+const programmer: Developer = {
+  name: 'jeon',
+  age: 29,
+  language: 'ts',
+  //level: 3 error 발생, 정의된 interface의 규칙에 어긋나므로 할당 불가함.
+}
