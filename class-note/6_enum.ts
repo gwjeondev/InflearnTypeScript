@@ -17,7 +17,7 @@ enum StringEnumShoes {
   NewBalance = '뉴발란스',
   Fila = '필라'
 }
-console.log(StringEnumShoes.Nike);
-console.log(StringEnumShoes.Adidas);
-console.log(StringEnumShoes.NewBalance);
-console.log(StringEnumShoes.Fila);
+console.log(StringEnumShoes.Nike); //나이키
+console.log(StringEnumShoes.Adidas); //아디다스
+console.log(StringEnumShoes.NewBalance); //뉴발란스
+console.log(StringEnumShoes.Fila); //필라
