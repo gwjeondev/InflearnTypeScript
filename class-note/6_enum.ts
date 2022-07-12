@@ -1,7 +1,9 @@
-enum Shoes {
+//숫자형 Enum
+enum NumberEnumShoes {
   Nike,
   Adidas,
   NewBalance
 }
-
-console.log(Shoes.Nike);
+console.log(NumberEnumShoes.Nike);
+console.log(NumberEnumShoes.Adidas);
+console.log(NumberEnumShoes.NewBalance);
