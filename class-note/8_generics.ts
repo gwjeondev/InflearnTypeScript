@@ -30,3 +30,9 @@ const log = logText<string>('hello');
 log.split('').reverse().join('');
 
 
+//제네릭의 타입 제한
+//아래 extends로 string 타입제한을 하지 않으면, logTextLength 함수는 text의 타입을 추론할 수가 없으므로 length를 사용할 수 없음.
+const logTextLength = <T extends string>(text: T):T => {
+  console.log(text.length);
+}
+logTextLength<string>('hello');
