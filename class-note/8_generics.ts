@@ -36,3 +36,16 @@ const logTextLength = <T extends string>(text: T):T => {
   console.log(text.length);
 }
 logTextLength<string>('hello');
+
+//제네릭 타입 제한 keyof
+interface ShoppingItem {
+  name: string,
+  price: number,
+  stock: number
+}
+const getShoppingItemOption = <T extends keyof ShoppingItem>(item: T): T => {
+  console.log(item);
+}
+//getShoppingItemOption(10); error 발생
+//ShoppingItem 인터페이스에 정의 되어있는 key만 인자로 넘길 수 있음.
+getShoppingItemOption('name');
