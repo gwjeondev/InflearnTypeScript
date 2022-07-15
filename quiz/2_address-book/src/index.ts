@@ -1,5 +1,11 @@
 import { Promise } from 'es6-promise';
 
+enum PhoneType {
+  Home = 'home',
+  Office = 'office',
+  Studio = 'studio',
+}
+
 interface PhoneNumberDictionary {
   [phone: string]: {
     num: number;
@@ -80,7 +86,7 @@ class AddressBook {
     return this.contacts.filter(contact => contact.address === address);
   }
 
-  findContactByPhone(phoneNumber: number, phoneType: string): Contact[] {
+  findContactByPhone(phoneNumber: number, phoneType: PhoneType): Contact[] {
     return this.contacts.filter(
       contact => contact.phones[phoneType].num === phoneNumber
     );
@@ -104,4 +110,5 @@ const addressBock: AddressBook = new AddressBook();
 
 setTimeout(() => {
   console.log(addressBock);
+  console.log(addressBock.findContactByPhone(11122223333, PhoneType.Home));
 }, 3000);

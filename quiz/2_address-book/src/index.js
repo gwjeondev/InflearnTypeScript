@@ -1,6 +1,12 @@
 "use strict";
 exports.__esModule = true;
 var es6_promise_1 = require("es6-promise");
+var Phones;
+(function (Phones) {
+    Phones["Home"] = "home";
+    Phones["Office"] = "office";
+    Phones["Studio"] = "studio";
+})(Phones || (Phones = {}));
 // api
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
 function fetchContacts() {
@@ -79,6 +85,8 @@ var AddressBook = /** @class */ (function () {
     return AddressBook;
 }());
 var addressBock = new AddressBook();
+console.log(addressBock.findContactByPhone(11122223333, Phones.Home));
 setTimeout(function () {
     console.log(addressBock);
+    console.log(addressBock.findContactByPhone(11122223333, Phones.Home));
 }, 3000);
