@@ -28,3 +28,7 @@ const eunbyul:Woman<string> = {
   age: 25,
   job: 'developer'
 }
+
+//Best Common Type(가장 근접한(적절한) 타입으로 추론)
+const arr = [1,2,3]; //number
+const arr = [1,true,'hello']; //number | boolean | string
