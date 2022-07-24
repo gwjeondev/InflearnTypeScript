@@ -19,3 +19,32 @@ let teacher: Teacher;
 teacher = developer;
 
 
+//함수 타입 호환 예제
+let add = (a: number) => {
+    // ...
+}
+let sum = (a: number, b:number) => {
+    // ...
+}
+//add = sum; 불가능
+sum = add; // 가능
+
+
+//제네릭 타입 예제
+interface Empty<T> {
+    //...
+}
+let empty1: Empty<string>;
+let empty2: Empty<number>;
+//아래 두줄 모두 가능
+// empty1 = empty2;
+// empty2 = empty1;
+
+interface NotEmpty<T> {
+    name: T;
+}
+let notEmpty1: NotEmpty<string>;
+let notEmpty2: NotEmpty<number>;
+//아래 두줄 모두 불가능
+// notEmpty1 = notEmpty2;
+// notEmpty2 = notEmpty1;
