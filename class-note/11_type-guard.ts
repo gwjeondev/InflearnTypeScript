@@ -26,3 +26,13 @@ if((jeon as Developer).skill) {
     console.log(age);
 }
 
+//타입 가드 정의
+const isDeveloper = (target: Developer | Person): target is Developer => {
+    return (target as Developer).skill !== undefined;
+}
+//developer 일 때
+if(isDeveloper(jeon)) {
+    console.log(jeon.skill);
+} else { //person 일 때
+    console.log(jeon.age);
+}
